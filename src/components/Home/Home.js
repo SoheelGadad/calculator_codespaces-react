@@ -123,7 +123,7 @@ const App = () => {
         </button>
         <button className="button equal-button" onClick={() => handleEqualClick()}>
           =
-        </button>
+        </button></div>
         {/* History */}
         <div className="history">
         <h3>History</h3>
@@ -135,7 +135,6 @@ const App = () => {
         <button className="button clear-history-button" onClick={() => handleClearHistoryClick()}>
           Clear History
         </button>
-      </div>
       </div>
     </div>
   );
