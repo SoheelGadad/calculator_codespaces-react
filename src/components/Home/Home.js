@@ -15,6 +15,15 @@ const Home = () => {
     }
   };
 
+  const handlePercentageClick = () => {
+    try {
+      const result = parseFloat(displayValue) / 100;
+      setDisplayValue(result.toString());
+    } catch (error) {
+      setDisplayValue('Error');
+    }
+  };
+
   const handleDecimalClick = () => {
     if (!displayValue.includes('.')) {
       setDisplayValue(displayValue + '.');
@@ -80,7 +89,7 @@ const Home = () => {
         <button className="button number-button" onClick={() => handleButtonClick('9')}>
           9
         </button>
-        <button className="button operator-button" onClick={() => handleOperatorClick('+')}>
+        <button className="button f operator-button" onClick={() => handleOperatorClick('+')}>
           +
         </button>
         <button className="button number-button" onClick={() => handleButtonClick('4')}>
@@ -92,7 +101,7 @@ const Home = () => {
         <button className="button number-button" onClick={() => handleButtonClick('6')}>
           6
         </button>
-        <button className="button operator-button" onClick={() => handleOperatorClick('-')}>
+        <button className="button f operator-button" onClick={() => handleOperatorClick('-')}>
           -
         </button>
         <button className="button number-button" onClick={() => handleButtonClick('1')}>
@@ -104,27 +113,35 @@ const Home = () => {
         <button className="button number-button" onClick={() => handleButtonClick('3')}>
           3
         </button>
-        <button className="button operator-button" onClick={() => handleOperatorClick('*')}>
+        <button className="button f operator-button" onClick={() => handleOperatorClick('*')}>
           *
+        </button>
+        
+        <button className="button number-button" onClick={() => handleButtonClick('00')}>
+          00
+        </button>
+        <button className="button number-button" onClick={() => handleButtonClick('0')}>
+          0
+        </button>
+       
+        <button className="button decimal-button" onClick={() => handleDecimalClick()}>
+          .
+        </button>
+        <button className="button f operator-button" onClick={() => handleOperatorClick('/')}>
+          /
         </button>
         <button className="button clear-button" onClick={() => handleClearClick()}>
           C
         </button>
-        <button className="button number-button" onClick={() => handleButtonClick('0')}>
-      0
-    </button>
-    <button className="button decimal-button" onClick={() => handleDecimalClick()}>
-      .
-    </button>
-    <button className="button operator-button" onClick={() => handleOperatorClick('/')}>
-      /
-    </button>
-    <button className="button equal-button" onClick={() => handleEqualClick()}>
-      =
-    </button>
-    <button className="button clear-history-button" onClick={() => handleClearHistoryClick()}>
-      Clear History
-    </button>
+        <button className="button equal-button" onClick={() => handleEqualClick()}>
+          =   
+        </button>
+        <button className="button clear-history-button" onClick={() => handleClearHistoryClick()}>
+          Clear History
+        </button>
+        <button className="button f operator-button" onClick={() => handlePercentageClick()}>
+            %
+        </button>
   </div>
   <div className="history">
     <h2>History:</h2>
@@ -132,7 +149,10 @@ const Home = () => {
       <p key={index}>{calculation}</p>
     ))}
   </div>
-</div>
+  <div className="copyright">
+          Copyright (c) 2023 Soheel Gadad
+        </div>
+ </div>
 );
 };
 export default Home;
