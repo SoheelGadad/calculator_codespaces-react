@@ -9,7 +9,7 @@ Everything you do here is contained within this one codespace. There is no repos
 This project was bootstrapped for you with [Create React App](https://github.com/facebook/create-react-app).
 
 ## preview
- [![calcuator ](./src/Assets/advanced calculator.png)]
+ [![calcuator ](./src/Assets/advanced%20calculator.png)]
 ## Available Scripts
 
 In the project directory, you can run:
