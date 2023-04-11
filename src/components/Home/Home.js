@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
 
-const App = () => {
+const Home = () => {
   const [displayValue, setDisplayValue] = useState('0');
   const [operator, setOperator] = useState(null);
   const [prevValue, setPrevValue] = useState(null);
@@ -28,22 +28,21 @@ const App = () => {
   };
 
   const handleEqualClick = () => {
-    
     const prev = parseFloat(prevValue);
     const current = parseFloat(displayValue);
     let result = null;
     switch (operator) {
       case '+':
-        setDisplayValue(prev + current);
+        result = prev + current;
         break;
       case '-':
-        setDisplayValue(prev - current);
+        result = prev - current;
         break;
       case '*':
-        setDisplayValue(prev * current);
+        result = prev * current;
         break;
       case '/':
-        setDisplayValue(prev / current);
+        result = prev / current;
         break;
       default:
         break;
@@ -69,8 +68,7 @@ const App = () => {
 
   return (
     <div className="calculator">
-        <div className='title'><h1>Calculator</h1></div>
-        
+      <div className='title'><h1>Calculator</h1></div>
       <div className="display">{prevValue} {operator} {displayValue}</div>
       <div className="buttons">
         <button className="button number-button" onClick={() => handleButtonClick('7')}>
@@ -113,32 +111,28 @@ const App = () => {
           C
         </button>
         <button className="button number-button" onClick={() => handleButtonClick('0')}>
-          0
-        </button>
-        <button className="button decimal-button" onClick={() => handleDecimalClick()}>
-          .
-        </button>
-        <button className="button operator-button" onClick={() => handleOperatorClick('/')}>
-          /
-        </button>
-        <button className="button equal-button" onClick={() => handleEqualClick()}>
-          =
-        </button></div>
-        {/* History */}
-        <div className="history">
-        <h3>History</h3>
-        <ul>
-          {history.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-        <button className="button clear-history-button" onClick={() => handleClearHistoryClick()}>
-          Clear History
-        </button>
-      </div>
-    </div>
-  );
+      0
+    </button>
+    <button className="button decimal-button" onClick={() => handleDecimalClick()}>
+      .
+    </button>
+    <button className="button operator-button" onClick={() => handleOperatorClick('/')}>
+      /
+    </button>
+    <button className="button equal-button" onClick={() => handleEqualClick()}>
+      =
+    </button>
+    <button className="button clear-history-button" onClick={() => handleClearHistoryClick()}>
+      Clear History
+    </button>
+  </div>
+  <div className="history">
+    <h2>History:</h2>
+    {history.map((calculation, index) => (
+      <p key={index}>{calculation}</p>
+    ))}
+  </div>
+</div>
+);
 };
-
-export default App;
-
+export default Home;

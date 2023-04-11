@@ -1,93 +1,64 @@
+/* 
+And here's the accompanying CSS (style.css) for basic styling:
+
+```css */
 .calculator {
-    width: 300px;
-    margin: 0 auto;
-  }
-  
-  .display {
-    height: 100px;
-    line-height: 90px;
-    text-align: right;
-    background-color: #f8f8f8;
-    padding: 0 10px;
-    font-size: 24px;
-  }
-  .title{
-    text-align: center;
-  }
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .button {
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    font-size: 18px;
-    cursor: pointer;
-    background-color: #e0e0e0;
-    border: none;
-    outline: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #d0d0d0;
-  }
-  
-  .button:active {
-    background-color: #b0b0b0;
-  }
-  
-  .button:last-child {
-    grid-column: span 2;
-  }
-  
-  /* Dynamic styles for different types of buttons */
-  
-  .number-button {
-    background-color: #f8f8f8;
-    color: #333;
-  }
-  
-  .operator-button {
-    background-color: #f3d52e;
-    color: #333;
-  }
-  
-  .equal-button {
-    background-color: #34c14f;
-    color: #fff;
-  }
-  
-  .clear-button {
-    background-color: #b93434;
-    color: #fff;
-  }
-  
-  .decimal-button {
-    background-color: #888;
-    color: #fff;
-  }
-  .history {
-    margin-top: 1rem;
-    max-width: 300px;
-  }
-  
-  .history h3 {
-    margin: 0 0 0.5rem 0;
-  }
-  
-  .history ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .history li {
-    margin-bottom: 0.25rem;
-  }
-  
-  .clear-history-button {
-    margin-top: 1rem;
-  }
-  
+  width: 300px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.display {
+  height: 60px;
+  line-height: 60px;
+  text-align: right;
+  padding: 10px;
+  background-color: #f8f8f8;
+  font-size: 24px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.button {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+}
+
+.number-button {
+  background-color: #f0f0f0;
+}
+
+.operator-button,
+.equal-button,
+.clear-button,
+.clear-history-button {
+  background-color: orange;
+  color: #fff;
+}
+
+.decimal-button {
+  background-color: #f0f0f0;
+}
+
+.history {
+  margin-top: 20px;
+}
+
+.history h2 {
+  margin-bottom: 10px;
+}
+
+.history p {
+  margin: 0;
+  font-size: 14px;
+}
