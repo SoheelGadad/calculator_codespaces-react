@@ -1,4 +1,4 @@
-# GitHub Codespaces ♥️ React
+# GitHub calculator v1.1 using Codespaces ♥️ React
 
 Welcome to your shiny new Codespace running React! We've got everything fired up and running for you to explore React.
 
